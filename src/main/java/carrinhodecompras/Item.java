@@ -52,10 +52,16 @@ public class Item {
     }
     
     public double calcularValorTotal(){
-        if(listaItens.isEmpty()){
+        double valorTotal = 0d;
+        if(!listaItens.isEmpty()){
+            for(Item i : listaItens){
+                double valorItem = i.getPreco() * i.getQuantidade();
+                valorTotal += valorItem;
+            }
+        }else{
             System.out.println("A lista esta vazia!");
         }
-        return this.preco * this.quantidade;
+        return valorTotal;
     }
     
     public void exibirItens(){
@@ -68,9 +74,9 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Nome: " + this.getNome() +
+        return "\nNome: " + this.getNome() +
                "\nPreco: " + this.getPreco() +
                "\nQuantidade: " + this.getQuantidade() +
-               "\nValor total: " + this.calcularValorTotal();
+               "\nValor: " + this.getPreco() * this.getQuantidade() + "\n";
     }    
 }
