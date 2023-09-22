@@ -26,12 +26,10 @@ public class Item {
     }
     
     public void adicionarItem(String nome, double preco, int quantidade){
-        if(nome.isEmpty()){
-            System.out.println("Nome precisa ser preenchido!");
-        }else if(preco <= 0){
-            System.out.println("O preco digitado deve ser maior que zero");
-        }else if(quantidade < 0){
-            System.out.println("A quantidade digitada deve ser maior que zero");
+        if(preco <= 0){
+            System.out.println("O preco digitado deve ser maior que zero.");
+        }else if(quantidade <= 0){
+            System.out.println("A quantidade digitada deve ser maior que zero.");
         }else{
             listaItens.add(new Item(nome, preco, quantidade));
         }
